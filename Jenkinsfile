@@ -25,7 +25,7 @@ pipeline {
 
         stage('Build image') {
             steps {
-                sh 'docker build -t denisterentiev/petclinic:v1'
+                sh 'docker build -t denisterentiev/petclinic:v1 .'
             }
         }
 
