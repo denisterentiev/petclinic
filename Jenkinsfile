@@ -25,7 +25,7 @@ pipeline {
 		
 	stage('Build image') {
             steps {
-                sh "docker build -t denisterentiev/petclinic:$env.BUILD_NUMBER"
+                sh "docker build -t denisterentiev/petclinic:v1"
             }
         }
 	
@@ -34,7 +34,7 @@ pipeline {
 				script {
 					withCredentials([string(credentialsID: 'docker-hub-cred', passwordVariable: 'DOCKER_PASSWORD', userVariable: 'DOCKER_USER')]) {
 						sh "docker login --username $DOCKER_USER --password $DOCKER_PASSWORD"
-						sh "docker push denisterentiev/petclinic:$env.BUILD_NUMBER"
+						sh "docker push denisterentiev/petclinic:v1"
 					}
     }
 }
