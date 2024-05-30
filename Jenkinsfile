@@ -34,7 +34,7 @@ pipeline {
 				script {
 					withCredentials([string(credentialsID: 'docker-hub-cred', passwordVariable: 'DOCKER_PASSWORD', userVariable: 'DOCKER_USER')]) {
 						sh "docker login --username $DOCKER_USER --password $DOCKER_PASSWORD"
-						sh "docker push denisterentiev/petclinic:{tag}"
+						sh "docker push denisterentiev/petclinic:$env.BUILD_NUMBER"
 					}
     }
 }
