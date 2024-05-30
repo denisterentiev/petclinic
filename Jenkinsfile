@@ -32,7 +32,7 @@ pipeline {
         stage('Push image docker') {
             steps {
                 script {
-                    withCredentials([string(credentialsID: 'docker-hub-cred', passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USER')]) {
+                    withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsID: 'docker-hub-cred', passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USER']]) {
                         sh "docker login -u $DOCKER_USER -p $DOCKER_PASSWORD"
                         sh 'docker push denisterentiev/petclinic:v1'
                     }
