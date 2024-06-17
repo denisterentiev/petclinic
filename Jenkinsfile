@@ -25,6 +25,7 @@ pipeline {
 
         stage('Build image') {
             steps {
+                echo 'building image'
                 sh "docker build -t denisterentiev/petclinic:$env.BUILD_NUMBER ."
             }
         }
