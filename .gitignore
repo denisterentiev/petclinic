@@ -1,4 +1,3 @@
-improve
 target/*
 .settings/*
 .classpath
@@ -7,3 +6,4 @@ target/*
 *.iml
 /target
 _site/
+*.txt
