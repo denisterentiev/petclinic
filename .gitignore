@@ -6,4 +6,9 @@ target/*
 *.iml
 /target
 _site/
+<<<<<<< HEAD
 *.txt
+=======
+*.txt
+*.pdf
+>>>>>>> badaef9f771a84cc1f0a154092b380d95f6a7537
